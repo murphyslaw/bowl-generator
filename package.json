@@ -1,12 +1,24 @@
 {
+  "private": true,
   "name": "bowl-generator",
   "version": "0.1.0",
-  "private": true,
+  "description": "Bowl Generator - Generate a healthy bowl for your next meal",
+  "main": "app/page.tsx",
+  "author": "Falk Köppe",
+  "license": "MIT",
+  "engines": {
+    "node": "^18.16.0",
+    "npm": "^9.6.7"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docker:build:dev": "docker compose --file compose.dev.yml build --no-cache",
+    "docker:build:prod": "docker compose --file compose.prod.yml build --no-cache",
+    "docker:dev": "docker compose --file compose.dev.yml up --renew-anon-volumes",
+    "docker:prod": "docker compose --file compose.prod.yml up"
   },
   "dependencies": {
     "@types/node": "20.4.5",
